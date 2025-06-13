@@ -48,8 +48,8 @@ print("\n" + "="*60 + "\n")
 
 #14 Selecione os produtos que são 'Fruta' OU têm Estoque_Kg maior que 150 Kg. 
 df_produtos['Estoque_Kg'] = pd.to_numeric(df_produtos['Estoque_Kg'],errors='coerce')
-estoque_fruta = df_produtos[df_produtos['Categoria'] == 'Fruta']
-kilo = estoque_fruta[estoque_fruta['Estoque_Kg'] > 150]
+filtro = (df_produtos['Categoria'] == 'Fruta') | (df_produtos['Estoque_Kg'] > 150)
+kilo = df_produtos[filtro]
 print(f"\nProdutos que são 'Fruta' OU têm Estoque_Kg maior que 150 Kg:")
-print(kilo[['Produto','Estoque_Kg']].head())
+print(kilo[['Produto', 'Categoria', 'Estoque_Kg']])
 print("\n" + "="*60 + "\n")
