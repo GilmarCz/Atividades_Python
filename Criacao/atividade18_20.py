@@ -43,3 +43,5 @@ valores = ['Alto', 'Médio', 'Baixo']
 df_produtos['Status_Estoque'] = np.select(condicoes, valores)
 
 print(df_produtos.head(10))
+
+#verificar resolução e prints
