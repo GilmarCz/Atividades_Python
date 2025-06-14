@@ -15,7 +15,11 @@ print(df_mais_caros[['Produto','Preco_Kg']].head())
 print("\n" + "="*60 + "\n")
 
 # 17. Liste os produtos ordenados pela Data_Ultima_Reposicao (do mais recente para o mais antigo) e,para datas iguais, pelo nome do produto em ordem alfabética.
-df_data_reposicao = df_produtos.sort_values(by='Data_Ultima_Reposicao', ascending=False)
-print(f"\nProdutos ordenados pela Data_Ultima_Reposicao: ")
-print(df_data_reposicao[['Produto','Data_Ultima_Reposicao']].head(200))
+df_data_reposicao = df_produtos.sort_values(
+    by=['Data_Ultima_Reposicao', 'Produto'],
+    ascending=[False, True]
+)
+
+print(f"\nProdutos ordenados pela Data_Ultima_Reposicao (mais recente) e Produto (ordem alfabética):")
+print(df_data_reposicao[['Produto', 'Data_Ultima_Reposicao']].head(200))
 print("\n" + "="*60 + "\n")
