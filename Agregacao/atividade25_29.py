@@ -31,6 +31,8 @@ print(produtos_por_fornecedor)
 
 
 # 29. Calcule a soma das Vendas_Ultima_Semana_Kg e o Valor_Total_Estoque médio para cada Categoria.
+df_produtos['Valor_Total_Estoque'] = df_produtos['Preco_Kg'] * df_produtos['Estoque_Kg']
+
 resumo_categoria = df_produtos.groupby('Categoria').agg(
     Soma_Vendas_Ultima_Semana_Kg=('Vendas_Ultima_Semana_Kg', 'sum'),
     Media_Valor_Total_Estoque=('Valor_Total_Estoque', 'mean')
